@@ -4,6 +4,7 @@
 
 
 ## Loading and preprocessing the data
+Set the working directory where the activity file is stored and read it
 
 ```r
 setwd("C:/Users/s.maramreddy/OneDrive - Accenture/Personal/R/RepData_PeerAssessment1/activity")
@@ -55,6 +56,8 @@ stepsInterval[which.max(stepsInterval$steps), ]$interval
 
 
 ## Imputing missing values
+Impute the missing values manually by calculating the mean of all the steps and then converting it to integer value
+
 
 ```r
 missingval <- sum(!complete.cases(activityfile))
@@ -105,4 +108,4 @@ xyplot(steps ~ interval | factor(day), data = stepsInterval2, aspect = 1/2,
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
-
+During the weekday, there are more steps between the intervls 500-1000 where as weekend has more steps between intervals of 1000 - 2000
